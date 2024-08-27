@@ -51,10 +51,14 @@ func main() {
 	result := builder.String()
 	fmt.Println(result)
 
-	// strings.join 拼接字符数组 返回string
+	// strings.join 切片转字符串
 	element := []string{"apple", "banana", "cherry"}
-	results := strings.Join(element, ", ")
-	fmt.Println(results)
+	elementStr := strings.Join(element, ", ")
+	fmt.Println(elementStr)
+
+	// strings.Split 字符串转切片
+	elementCopy := strings.Split(elementStr, ", ")
+	fmt.Println(elementCopy)
 
 	// bytes.Buffer 高效读取二进制数据和字符 构建字符串
 	var buffer bytes.Buffer
