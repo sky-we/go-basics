@@ -8,6 +8,7 @@ import (
 
 // 服务注册
 // 数据库连接
+// init函数最先执行
 func init() {
 	fmt.Println("init func")
 

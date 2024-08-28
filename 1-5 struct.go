@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// 定义结构体
+// Request 定义结构体
 type Request struct {
 	method  string
 	url     string
@@ -12,7 +12,6 @@ type Request struct {
 
 func main() {
 	// 访问结构体
-
 	var req Request
 	fmt.Println(req.method, req.url, req.body)
 
@@ -25,9 +24,9 @@ func main() {
 	s.GetBody = func(a string, b string) []byte {
 		return []byte(a + " " + b)
 	}
+
 	// 通过.直接访问
 	fmt.Println(s.url)
-
 	result := s.GetBody("1", "2")
 	fmt.Println(string(result))
 

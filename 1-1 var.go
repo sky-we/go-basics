@@ -4,7 +4,7 @@ import "fmt"
 
 /* 全局变量声明 */
 
-// 声明变量类
+// 声明变量
 var name string
 var age int
 
@@ -18,8 +18,8 @@ var n float32 = 1.2
 
 // 变量块，将同一类变量合并，增加可读性
 var (
-	me  int64 = 1
-	you       = 1.2
+	me  int64   = 1
+	you float64 = 1.2
 )
 
 func main() {
@@ -38,8 +38,8 @@ func main() {
 
 	// 变量块，将同一类变量合并，增加可读性
 	var (
-		e = int64(1)
-		f = float32(1.2)
+		e int     = 1
+		f float32 = 1.2
 	)
 	fmt.Printf("e = %d, f= %f\n", e, f)
 }
