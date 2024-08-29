@@ -45,21 +45,27 @@ func getStudent(id int64) (*student, error) {
 func main() {
 	start := time.Now()
 	ids := []int64{1, 2}
-
+	idAgeMap := make(map[int64]int)
 	var (
-		eg sync.WaitGroup
+		eg    sync.WaitGroup
+		mutex sync.Mutex
 	)
 	for _, id := range ids {
 		eg.Add(1)
 		go func(id int64) {
+
 			defer func() {
 				// defer释放资源
 				eg.Done()
+
 			}()
 			s, err := getStudent(id)
 			if err != nil {
 				panic("error")
 			}
+			mutex.Lock() // 互斥锁限制并发协程对共享资源的访问，避免了数据不一致和竞态条件
+			idAgeMap[s.id] = s.age
+			mutex.Unlock()
 			fmt.Printf("student id is: %d, s is: [%+v]\n", s.id, s)
 		}(id)
 
@@ -67,4 +73,5 @@ func main() {
 	eg.Wait()
 	end := time.Since(start)
 	fmt.Println(end)
+	fmt.Println(idAgeMap)
 }
