@@ -2,7 +2,18 @@ package main
 
 import "fmt"
 
-// Request 定义结构体
+/*
+struct 的作用
+1 定义数据结构：
+struct 是一种聚合数据类型，可以将多个不同类型的字段组合在一起，定义一个数据结构。它通常用于描述某个实体或概念。
+
+2 方法的接收者类型：
+struct 可以与方法一起使用，使得这些方法可以在特定的数据类型上操作。
+
+3 分组相关数据：
+struct 可以将相关数据字段分组，形成一个逻辑单元，方便数据的组织和传递。
+*/
+
 type Request struct {
 	method  string
 	url     string

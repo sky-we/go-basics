@@ -1,3 +1,21 @@
+/*
+	interface 的作用
+  1 定义行为：
+  	interface 定义了一组方法，而不包含具体的实现。它用于描述类型必须实现哪些方法才能被视为符合某个接口、、
+  2 抽象和多态性：
+  	interface 提供了抽象层，使得不同的类型可以实现相同的接口，从而可以在接口层面进行操作，实现多态性。
+  3 松耦合：
+  	使用 interface 可以减少代码的耦合度，使代码更容易扩展和维护。
+*/
+
+/*
+struct 与 interface 的区别
+struct 是数据的定义，interface 是行为的定义。
+struct 聚合数据，interface 聚合方法。
+struct 用于具体的数据操作，interface 用于定义可以被实现的行为集合。
+struct 是值类型或指针类型，而 interface 是引用类型（它包含一个值和该值的类型）。
+A struct 实现了 B interface 那么表明A是符合B行为的一种类型
+*/
 package main
 
 import "fmt"
