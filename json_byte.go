@@ -49,7 +49,7 @@ func main() {
 	}
 	fmt.Println(receiver3["name"])
 
-	// go struct -----序列化---->  byte[]  ----反序列化----> json string
+	// go struct -----序列化---->  byte[]  ----类型转换----> json string
 
 	receiver5 := map[string]string{
 		"name": "John Doe",
