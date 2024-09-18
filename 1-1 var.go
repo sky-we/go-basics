@@ -41,5 +41,9 @@ func main() {
 		e int     = 1
 		f float32 = 1.2
 	)
-	fmt.Printf("e = %d, f= %f\n", e, f)
+	var (
+		g = 1
+		h = 1.2
+	)
+	fmt.Printf("e = %d, f= %f, g= %d,h= %f\n", e, f, g, h)
 }
